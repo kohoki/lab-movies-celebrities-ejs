@@ -1,0 +1,16 @@
+<h2>Create new Celebreties</h2>
+
+<form method="POST">
+    <input type="text" placeholder="title of movie" name="title" />
+    <input type="text" placeholder="genre of movie" name="genre" />
+    <input type="text" placeholder="plot of movie" name="plot" />
+
+    <select name="cast" multiple>
+        <% celebrities.forEach(element => { %>
+        <option value="<%- element._id %>"><%- element.name %></option>
+        <% }); %>
+      </select>
+
+      
+    <button type="submit">Send</button>
+  </form>

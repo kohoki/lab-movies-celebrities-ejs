@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const celebritiesDB = require('../models/Celebrity.model') // look
+const celebritiesDB = require('../models/Celebrity.model') 
 
 // all your routes here
 router.get("/", async (req, res, next) => {
