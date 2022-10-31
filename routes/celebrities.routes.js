@@ -17,9 +17,10 @@ router.post("/create", async (req, res, next) => {
       occupation: req.body.occupation,
       catchPhrase: req.body.catchPhrase,
     })
-    res.redirect('/celebrities/create')
+    res.render("celebrities/celebrities");
   } catch (error) {
     console.log(error)
+    res.redirect('/celebrities/create')
   }
 })
 
