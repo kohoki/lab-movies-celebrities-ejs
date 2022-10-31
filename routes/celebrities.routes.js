@@ -2,8 +2,16 @@ const router = require('express').Router()
 const celebritiesDB = require('../models/Celebrity.model') // look
 
 // all your routes here
-router.get("/", (req, res, next) => {
-    res.render("celebrities/celebrities");
+router.get("/", async (req, res, next) => {
+  try
+  {
+    const celebrities = await celebritiesDB.find()
+    console.log(celebrities);
+    res.render("celebrities/celebrities", {celebrities});
+  }
+  catch(err) {
+    console.log(err)
+  }
   });
 
 router.get("/create", (req, res, next) => {
@@ -19,7 +27,6 @@ router.post("/create", async (req, res, next) => {
     })
     res.render("celebrities/celebrities");
   } catch (error) {
-    console.log(error)
     res.redirect('/celebrities/create')
   }
 })
