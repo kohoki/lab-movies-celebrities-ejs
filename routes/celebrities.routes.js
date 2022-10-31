@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const celebritiesDB = require('../models/Celebrity.model') // look
 
 // all your routes here
 router.get("/", (req, res, next) => {
